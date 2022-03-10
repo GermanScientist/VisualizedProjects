@@ -25,7 +25,7 @@ namespace VisualizedProjects.Visualizer {
                 for (int i = 0; i < columnsAmount; i++) {
                     grid.Add(new List<FSM_Cell>(rowsAmount));
                     for (int j = 0; j < columnsAmount; j++)
-                        grid[i].Add(new FSM_Cell()); //Cell(x, y, width, height)
+                        grid[i].Add(new FSM_Cell(i, j,cellWidth, cellHeight, Color.WHITE)); //Cell(x, y, width, height)
                 }
             }
 
@@ -33,8 +33,7 @@ namespace VisualizedProjects.Visualizer {
                 //Draw the cells
                 for (int i = 0; i < columnsAmount; i++) {
                     for (int j = 0; j < rowsAmount; j++) {
-                        Raylib.DrawRectangle(i * cellWidth, j * cellHeight, cellWidth, cellHeight, Color.WHITE); //Draw the cell rectangle
-                        Raylib.DrawRectangleLines(i * cellWidth, j * cellHeight, cellWidth, cellHeight, Color.BLACK); //Draw the cell outline
+                        grid[i][j].DrawCell(Color.WHITE);
                     }
                 }   
             }
