@@ -1,5 +1,5 @@
 ﻿namespace VisualizedProjects.Visualizer {
-    class ProgramBase {
+    class V_ProgramBase {
         //Everything in the update function will be updated every frame and able to be drawn in the visualizer
         public virtual void Update() { }
 

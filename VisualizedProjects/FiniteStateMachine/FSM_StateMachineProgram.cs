@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Raylib_cs;
+﻿using Raylib_cs;
 
 namespace VisualizedProjects.Visualizer {
     namespace VisualizedProjects.FiniteStateMachine {
-        class StateMachineProgram : ProgramBase {
-            public StateMachineProgram() {
+        class FSM_StateMachineProgram : V_ProgramBase {
+            public FSM_StateMachineProgram() {
             }
 
             public override void Update() {

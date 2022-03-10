@@ -3,10 +3,10 @@
         namespace VisualizedProjects.PathFinding {
             class Program {
                 static void Main(string[] args) {
-                    //Visualizer visualizer = new Visualizer("Pathfinding", new Pathfindinder()); //Create a window that runs the pathfinding program
+                    //V_Visualizer visualizer = new V_Visualizer("Pathfinding", new PF_Pathfinder()); //Create a window that runs the pathfinding program
                     //while (visualizer.Run()) {; } //Create an update loop to start running the application
 
-                    Visualizer visualizer = new Visualizer("State Machine", new StateMachineProgram()); //Create a window that runs the pathfinding program
+                    V_Visualizer visualizer = new V_Visualizer("State Machine", new FSM_StateMachineProgram()); //Create a window that runs the pathfinding program
                     while (visualizer.Run()) {; } //Create an update loop to start running the application
                 }
             }

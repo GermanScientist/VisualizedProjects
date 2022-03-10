@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Numerics;
 using Raylib_cs;
 
 namespace VisualizedProjects.Visualizer {
-    class Visualizer {
-        private ProgramBase program;
+    class V_Visualizer {
+        private V_ProgramBase program;
 
         //The constructor for the visualizer class
-        public Visualizer(string _title, ProgramBase _program) {
+        public V_Visualizer(string _title, V_ProgramBase _program) {
             program = _program; //Assign the program
-            Raylib.InitWindow((int)Settings.ScreenSize.X, (int)Settings.ScreenSize.Y, _title); //Initialize a window
+            Raylib.InitWindow((int)V_Settings.ScreenSize.X, (int)V_Settings.ScreenSize.Y, _title); //Initialize a window
         }
 
         //Run every frame of the window
