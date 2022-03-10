@@ -3,12 +3,9 @@ using Raylib_cs;
 using System.Collections.Generic;
 
 namespace VisualizedProjects.Visualizer {
-    namespace VisualizedProjects.FiniteStateMachine
-    {
-        namespace VisualizedProjects.PathFinding
-        {
-            class PF_Cell
-            {
+    namespace VisualizedProjects.FiniteStateMachine {
+        namespace VisualizedProjects.PathFinding {
+            class PF_Cell {
                 //Properties
                 private int x; //The x position of the cell
                 private int y; //The y position of the cell
@@ -36,8 +33,7 @@ namespace VisualizedProjects.Visualizer {
                 public List<PF_Cell> Neighbors { get { return neighbors; } }
                 public PF_Cell Parent { get { return parent; } set { parent = value; } }
 
-                public PF_Cell(int _x, int _y, int _width, int _height)
-                {
+                public PF_Cell(int _x, int _y, int _width, int _height) {
                     //The variables needed for the formula f(n) = g(n) + h(n), n being the next node on the path
                     F = 0; //f(n) is the total cost of the node
                     G = 0; //g(n) is the cost from the start node to n
@@ -59,16 +55,14 @@ namespace VisualizedProjects.Visualizer {
                 }
 
                 //Draw the cell
-                public void DrawCell(Color _cellColor)
-                {
+                public void DrawCell(Color _cellColor) {
                     if (!walkable) _cellColor = Color.BLACK;
                     Raylib.DrawRectangle(x * width, y * height, width, height, _cellColor); //Draw the cell rectangle
                     Raylib.DrawRectangleLines(x * width, y * height, width, height, Color.BLACK); //Draw the cell outline
                 }
 
                 //Add a neighboor to this cell
-                public void AddNeighbors(List<List<PF_Cell>> _grid, int _columns, int _rows)
-                {
+                public void AddNeighbors(List<List<PF_Cell>> _grid, int _columns, int _rows) {
                     //Add neighboors to this cell if the current cell isn't on an edge
                     if (x < _columns - 1) neighbors.Add(_grid[x + 1][y]);
                     if (x > 0) neighbors.Add(_grid[x - 1][y]);
