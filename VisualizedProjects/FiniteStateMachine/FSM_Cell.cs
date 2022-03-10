@@ -10,11 +10,17 @@ namespace VisualizedProjects.Visualizer {
             private int width; //Cell width
             private int height; //Cell height
             
-            private Color color; //Cell height
+            private Color cellColor; //Cell height
 
             //The cell positions
             public int X { get { return x; } }
             public int Y { get { return y; } }
+
+            //The cell size
+            public int Width { get { return width; } }
+            public int Height { get { return height; } }
+
+            public Color CellColor { get { return cellColor; } protected set { cellColor = value; } }
 
             public FSM_Cell(int _x, int _y, int _width, int _height, Color _color) {
                 //The cell positions and size
@@ -24,12 +30,12 @@ namespace VisualizedProjects.Visualizer {
                 height = _height;
 
                 //The cell color
-                color = _color;
+                cellColor = _color;
             }
 
             //Draw the cell
-            public void DrawCell(Color _cellColor) {
-                Raylib.DrawRectangle(x * width, y * height, width, height, _cellColor); //Draw the cell rectangle
+            public void DrawCell() {
+                Raylib.DrawRectangle(x * width, y * height, width, height, cellColor); //Draw the cell rectangle
                 Raylib.DrawRectangleLines(x * width, y * height, width, height, Color.BLACK); //Draw the cell outline
             }
         }

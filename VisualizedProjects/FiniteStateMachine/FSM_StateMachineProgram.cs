@@ -1,5 +1,6 @@
 ﻿using Raylib_cs;
 using System.Collections.Generic;
+using System;
 
 namespace VisualizedProjects.Visualizer {
     namespace VisualizedProjects.FiniteStateMachine {
@@ -27,13 +28,23 @@ namespace VisualizedProjects.Visualizer {
                     for (int j = 0; j < columnsAmount; j++)
                         grid[i].Add(new FSM_Cell(i, j,cellWidth, cellHeight, Color.WHITE)); //Cell(x, y, width, height)
                 }
+
+                //Start the setup
+                Setup();
+            }
+
+            public override void Setup() {
+                FSM_Cell playerGrid = grid[0][0];
+                FSM_Cell enemyGrid = grid[columnsAmount - 1][rowsAmount - 1];
+                grid[0][0] = new FSM_Player(playerGrid.X, playerGrid.Y, playerGrid.Width, playerGrid.Height, playerGrid.CellColor); //Assign the player cell
+                grid[columnsAmount - 1][rowsAmount - 1] = new FSM_Enemy(enemyGrid.X, enemyGrid.Y, enemyGrid.Width, enemyGrid.Height, enemyGrid.CellColor); //Assign the enemy cell
             }
 
             public override void Update() {
                 //Draw the cells
                 for (int i = 0; i < columnsAmount; i++) {
                     for (int j = 0; j < rowsAmount; j++) {
-                        grid[i][j].DrawCell(Color.WHITE);
+                        grid[i][j].DrawCell();
                     }
                 }   
             }
